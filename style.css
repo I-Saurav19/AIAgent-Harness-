@@ -1,0 +1,152 @@
+/* CSS reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #111;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Utility classes */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.3s;
+}
+.btn.primary {
+  background: #ff4e00;
+  color: #fff;
+}
+.btn.primary:hover {
+  background: #ff2e00;
+  transform: translateY(-3px);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+}
+
+.hero-content {
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero-title .highlight {
+  color: #ff4e00;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.car-illustration {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  max-width: 800px;
+  transform: translateY(20%);
+  opacity: 0.5;
+  animation: float 6s ease-in-out infinite;
+}
+
+.car-illustration img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+/* Features Section */
+.features {
+  padding: 5rem 2rem;
+  background: #222;
+}
+
+.features h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+.feature-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.feature-card {
+  background: #333;
+  padding: 2rem;
+  border-radius: 10px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.6s, opacity 0.6s;
+}
+.feature-card.in-view {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.feature-card h3 {
+  margin-bottom: 1rem;
+  color: #ff4e00;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background: #111;
+  font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(20%) translateX(0); }
+  50% { transform: translateY(25%) translateX(5%); }
+  100% { transform: translateY(20%) translateX(0); }
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+    text-align: left;
+    padding: 4rem;
+  }
+  .hero-content {
+    flex: 1;
+    margin-right: 2rem;
+  }
+  .car-illustration {
+    width: 50%;
+    transform: none;
+  }
+}
+
